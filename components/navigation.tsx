@@ -100,15 +100,15 @@ const Navigation = () => {
       <header className="hidden md:block fixed top-0 left-0 right-0 z-30 h-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto grid h-full max-w-7xl grid-cols-3 items-center px-6">
           <div className="flex items-center justify-start">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center">
               <Image
-                src="/favicon.ico"
-                alt="AI Chatbot logo"
-                width={36}
-                height={36}
-                className="invert dark:invert-0"
+                src="/logo.png"
+                alt="AI Chatbot"
+                width={180}
+                height={50}
+                className="h-14 w-auto invert dark:invert-0"
+                priority
               />
-              <span className="font-bold">AI Chatbot</span>
             </Link>
           </div>
           <nav className="flex items-center justify-center gap-5">
@@ -175,16 +175,14 @@ const Navigation = () => {
         >
           <div className="flex flex-col gap-4 p-4 pb-2">
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                <div className="relative h-8 w-8 overflow-hidden rounded-lg bg-primary/10 p-1">
-                  <Image
-                    src="/favicon.ico"
-                    alt="Logo"
-                    fill
-                    className="object-contain invert dark:invert-0"
-                  />
-                </div>
-                <span className="font-bold text-lg tracking-tight">Chatbot</span>
+              <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+                <Image
+                  src="/logo.png"
+                  alt="AI Chatbot"
+                  width={160}
+                  height={45}
+                  className="h-12 w-auto invert dark:invert-0"
+                />
               </Link>
               <Button
                 size="icon"
@@ -265,15 +263,14 @@ const Navigation = () => {
           >
             <Menu className="h-6 w-6" />
           </Button>
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/favicon.ico"
-              alt="AI Chatbot logo"
-              width={34}
-              height={34}
-              className="invert dark:invert-0"
+              src="/logo.png"
+              alt="AI Chatbot"
+              width={160}
+              height={45}
+              className="h-12 w-auto invert dark:invert-0"
             />
-            <span className="text-lg font-bold">Chatbot</span>
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
