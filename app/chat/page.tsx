@@ -400,6 +400,11 @@ export default function ChatPage() {
     }
   }, [input]);
 
+  const playResponseSound = () => {
+    const audio = new Audio("/sound.mp3");
+    audio.play().catch((error) => console.error("Error playing sound:", error));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -482,6 +487,7 @@ I was developed by Manikanta Darapureddy.
       };
       setMessages((prev) => [...prev, assistantMessage]);
       setIsLoading(false);
+      playResponseSound();
 
       // Track assistant response
       try {
@@ -556,6 +562,8 @@ I was developed by Manikanta Darapureddy.
         setIsLoading(false);
         return [...prev, assistantMessage];
       });
+
+      playResponseSound();
 
       // Track assistant response
       try {
