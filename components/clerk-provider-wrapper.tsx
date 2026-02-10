@@ -17,7 +17,7 @@ export function ClerkProviderWrapper({
         baseTheme: resolvedTheme === "dark" ? dark : undefined,
         variables: {
           colorPrimary: resolvedTheme === "dark" ? "white" : "hsl(221.2 83.2% 53.3%)",
-          colorBackground: resolvedTheme === "dark" ? "black" : "white",
+          colorBackground: resolvedTheme === "dark" ? "#191919" : "white",
         },
       }}
     >
