@@ -23,7 +23,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { useUser, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
+import { useUser, SignedIn } from "@clerk/nextjs";
+
 
 // Message type definition
 type Message = {
@@ -776,12 +777,7 @@ I was developed by Manikanta Darapureddy.
         </div>
       </SignedIn>
 
-      {/* Show only when logged out */}
-      <SignedOut>
-        <div className="flex flex-1 items-center justify-center min-h-[300px]">
-          <SignIn routing="hash" />
-        </div>
-      </SignedOut>
+
     </div>
   );
 }

@@ -112,36 +112,42 @@ const Navigation = () => {
             </Link>
           </div>
           <nav className="flex items-center justify-center gap-5">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={cn(
-                  "relative h-16 flex items-center px-1 group",
-                  pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
-                )}
-              >
-                <span className="relative px-3 py-1.5 rounded-md text-sm font-bold transition-colors group-hover:bg-muted/50">
-                  {pathname === item.path && (
+            {navigationItems.map((item) => {
+              const isActive = 
+                pathname === item.path || 
+                (item.path === "/chat" && (pathname?.includes("/sign-in") || pathname?.includes("/sign-up")));
+              
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={cn(
+                    "relative h-16 flex items-center px-1 group",
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  )}
+                >
+                  <span className="relative px-3 py-1.5 rounded-md text-sm font-bold transition-colors group-hover:bg-muted/50">
+                    {isActive && (
+                      <motion.span
+                        className="absolute inset-0 bg-muted rounded-md -z-10"
+                        layoutId="navbar-box"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    {item.name}
+                  </span>
+                  {isActive && (
                     <motion.span
-                      className="absolute inset-0 bg-muted rounded-md -z-10"
-                      layoutId="navbar-box"
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"
+                      layoutId="underline"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
-                  {item.name}
-                </span>
-                {pathname === item.path && (
-                  <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"
-                    layoutId="underline"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </nav>
           <div className="flex items-center justify-end gap-4">
             <ThemeToggle />
@@ -202,7 +208,9 @@ const Navigation = () => {
             <div className="mb-2 h-px bg-border/50" />
             <nav className="flex flex-col gap-1">
               {navigationItems.map((item) => {
-                const isActive = pathname === item.path;
+                const isActive = 
+                  pathname === item.path || 
+                  (item.path === "/chat" && (pathname?.includes("/sign-in") || pathname?.includes("/sign-up")));
                 return (
                   <Link
                     key={item.path}
