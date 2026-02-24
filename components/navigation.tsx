@@ -239,7 +239,7 @@ const Navigation = () => {
                   <span className="text-sm font-medium text-muted-foreground">Theme</span>
                   <ThemeToggle />
                </div>
-               
+
                <div className="px-3 py-1">
                  <SignedOut>
                   <SignInButton mode="modal">
@@ -269,7 +269,22 @@ const Navigation = () => {
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
-            <Menu className="h-6 w-6" />
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="1.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="transition-transform active:scale-95"
+              style={{ width: '28px', height: '28px', display: 'block' }}
+            >
+              <line x1="3" y1="7" x2="10" y2="7" />
+              <line x1="3" y1="12" x2="14" y2="12" />
+              <line x1="3" y1="17" x2="18" y2="17" />
+              <path d="M18.5 4.5c-.7 0-1.3.3-1.8.8-.5-.5-1.1-.8-1.8-.8-1.3 0-2.2.9-2.2 2.2 0 1.3 1.3 2.5 2.2 3.1l1.8 1.8 1.8-1.8c.9-.6 2.2-1.8 2.2-3.1 0-1.3-.9-2.2-2.2-2.2z" fill="currentColor" stroke="none" />
+            </svg>
           </Button>
           <Link href="/" className="flex items-center">
             <Image
@@ -281,7 +296,6 @@ const Navigation = () => {
             />
           </Link>
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <SignedOut>
               <SignInButton mode="modal">
                 <Button variant="outline" size="sm">
