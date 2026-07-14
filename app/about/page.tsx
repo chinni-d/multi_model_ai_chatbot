@@ -376,7 +376,7 @@ export default function AboutPage() {
                       className="gap-2 bg-purple-600/10 hover:bg-purple-600/20 text-purple-600 dark:text-purple-400 border-purple-600/20"
                     >
                       <a
-                        href="https://www.dmanikanta.me"
+                        href="https://www.manikantadarapureddy.in"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
